@@ -19,6 +19,9 @@ package internal
 //export proxy_log
 func ProxyLog(logLevel LogLevel, messageData *byte, messageSize int) Status
 
+//export proxy_log_destination
+func ProxyLogDestination(destination *byte, destinationSize int, logLevel LogLevel, messageData *byte, messageSize int) Status
+
 //export proxy_send_local_response
 func ProxySendLocalResponse(statusCode uint32, statusCodeDetailData *byte, statusCodeDetailsSize int,
 	bodyData *byte, bodySize int, headersData *byte, headersSize int, grpcStatus int32) Status

@@ -708,6 +708,11 @@ func LogCritical(msg string) {
 	internal.ProxyLog(internal.LogLevelCritical, internal.StringBytePtr(msg), len(msg))
 }
 
+// LogTracef emits a message as a log with Critical log level.
+func LogDestination(dest string, msg string) {
+	internal.ProxyLogDestination(internal.StringBytePtr(dest), len(dest), internal.LogLevelInfo, internal.StringBytePtr(msg), len(msg))
+}
+
 // LogCriticalf formats according to a format specifier and emits as a log with Critical log level.
 //
 // Note that not all combinations of format and args are supported by tinygo.
